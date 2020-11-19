@@ -1,5 +1,6 @@
 package org.concept.security;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ public class WebController {
         return "external";
     }
 
+    @PreAuthorize("hasRole('company')")
     @GetMapping(path = "/intranet")
     public String intranet(Principal principal, Model model) {
         model.addAttribute("option", "dummy");
