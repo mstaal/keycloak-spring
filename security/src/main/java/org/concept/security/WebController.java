@@ -23,4 +23,10 @@ public class WebController {
         return "intranet";
     }
 
+    @PreAuthorize("hasRole('caseworker')")
+    @GetMapping(path = "/cases")
+    public String cases() {
+        return "cases";
+    }
+
 }
