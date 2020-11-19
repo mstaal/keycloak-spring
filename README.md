@@ -13,6 +13,6 @@ Each Keycloak instance has its own admin page. Login using the credentials (user
 Since the first Keycloak instance behaves as a broker to the Keycloak IDP, users are to be managed in the second Keycloak server. Adding users and assigning them roles in the second Keycloak instance will automatically make the broker adjust by adding / adjusting corresponding users in its own local database.
 
 # Setup Spring boot sample
-The Spring Boot sample is a gradle project which has been setup to use the aforementioned Keycloak broker for authentication and authorization purposes. The sample is located in the `security` folder. When running the gradle project, the application will be accessible from `localhost:8080`. The project is mostly based on the first of the following two samples, though the second samle has also served as some source of inspiration.
+The Spring Boot sample is a gradle project which has been setup to use the aforementioned Keycloak broker for authentication and authorization purposes. The sample is located in the `security` folder. When running the gradle project, the application will be accessible from `http://localhost:8080`. The project is mostly based on the first of the following two samples, though the second samle has also served as some source of inspiration.
 * https://www.baeldung.com/spring-boot-keycloak
 * https://www.baeldung.com/keycloak-embedded-in-spring-boot-app
