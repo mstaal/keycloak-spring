@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    keycloakbroker:
+      image: quay.io/keycloak/keycloak:latest
+      command: ["-Djboss.http.port=6971"]
+      environment:
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: admin
+      ports:
+        - 6971:6971
+    keycloakidp:
+      image: quay.io/keycloak/keycloak:latest
+      command: ["-Djboss.http.port=7981"]
+      environment:
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: admin
+      ports:
+        - 7981:7981

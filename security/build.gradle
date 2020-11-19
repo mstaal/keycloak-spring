@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'org.concept'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-oauth2-client', version: '2.4.0'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '11.0.3'
+	implementation group: 'org.keycloak.bom', name: 'keycloak-adapter-bom', version: '11.0.3', ext: 'pom'
+	implementation group: 'org.webjars', name: 'jquery', version: '3.5.1'
+	implementation group: 'org.webjars', name: 'bootstrap', version: '4.5.3'
+	implementation group: 'org.webjars', name: 'webjars-locator-core', version: '0.46'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
