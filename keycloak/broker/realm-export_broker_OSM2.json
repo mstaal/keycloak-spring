@@ -54,14 +54,6 @@
                 "attributes": {}
             },
             {
-                "id": "12b7dca5-0542-43c1-8955-25989cc1bdc5",
-                "name": "user",
-                "composite": false,
-                "clientRole": false,
-                "containerId": "OSM2",
-                "attributes": {}
-            },
-            {
                 "id": "1a5b0bb8-6fe0-4d81-b0fe-576fc1c5bc19",
                 "name": "company",
                 "composite": false,
@@ -1423,6 +1415,7 @@
     "identityProviders": [
         {
             "alias": "DCS",
+            "displayName": "DCS",
             "internalId": "113b9fd1-b420-4731-9828-faa8219c2034",
             "providerId": "saml",
             "enabled": true,
@@ -1449,6 +1442,34 @@
                 "wantAuthnRequestsSigned": "true",
                 "addExtensionsElementWithKeyInfo": "false",
                 "principalType": "SUBJECT"
+            }
+        }
+    ],
+    "identityProviderMappers": [
+        {
+            "id": "c1ceb818-7d30-404b-814e-1af253485b70",
+            "name": "CompanyRoleMapper",
+            "identityProviderAlias": "DCS",
+            "identityProviderMapper": "saml-role-idp-mapper",
+            "config": {
+                "attribute.value": "company",
+                "syncMode": "FORCE",
+                "attributes": "[]",
+                "role": "company",
+                "attribute.name": "Role"
+            }
+        },
+        {
+            "id": "1d099b9e-09df-40dd-b2fe-966c3ae85c88",
+            "name": "CaseworkerRoleMapper",
+            "identityProviderAlias": "DCS",
+            "identityProviderMapper": "saml-role-idp-mapper",
+            "config": {
+                "attribute.value": "caseworker",
+                "syncMode": "FORCE",
+                "attributes": "[]",
+                "role": "caseworker",
+                "attribute.name": "Role"
             }
         }
     ],
